@@ -1,0 +1,20 @@
+export default [
+    'normal',
+    'fighting',
+    'flying',
+    'poison',
+    'ground',
+    'rock',
+    'bug',
+    'ghost',
+    'steel',
+    'fire',
+    'water',
+    'grass',
+    'electric',
+    'psychic',
+    'ice',
+    'dragon',
+    'dark',
+    'fairy'
+].map(t => t.charAt(0).toUpperCase() + t.slice(1))
