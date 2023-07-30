@@ -54,7 +54,7 @@ const recalc = async (from) => {
 globalThis.addEventListener('message', async ({data}) => {
     if (data.type === 'add') {
         caught.push(data.pair);
-        tree = {...baseTree, children: []};
+        const tree = {...baseTree, children: []};
         await recalc(tree);
         globalThis.postMessage({
             type: 'complete'
@@ -63,7 +63,7 @@ globalThis.addEventListener('message', async ({data}) => {
         caught = caught.filter(team => {
             return team.p1 !== data.pair.p1 || team.p2 !== data.pair.p2 || team.location !== data.pair.location;
         });
-        tree = {...baseTree, children: []};
+        const tree = {...baseTree, children: []};
         await recalc(tree);
         globalThis.postMessage({
             type: 'complete'
