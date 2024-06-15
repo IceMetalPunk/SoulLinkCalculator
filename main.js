@@ -104,13 +104,11 @@ const render = () => {
             content += '</div>';
             display.innerHTML += content;
         }
-        [...display.querySelectorAll('.teams')].forEach(div => {
-            const header = div.querySelector('h3');
-            header.addEventListener('click', () => {
-                div.classList.toggle('closed');
-            });
-        });
     }
+    [...display.querySelectorAll('.teams')].forEach(div => {
+        const header = div.querySelector('h3');
+        header.addEventListener('click', () => div.classList.toggle('closed'));
+    });
 };
 const getSaveJson = () => JSON.stringify({ caught, teams, required });
 saveBtn.addEventListener('click', () => {
