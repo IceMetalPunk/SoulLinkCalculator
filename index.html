@@ -5,134 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soul Link Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.16.1/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.min.js"></script>
     <script defer src="./main.js" type="module"></script>
-    <style>
-        #type1, #type2, #type1 option, #type2 option {
-            text-transform: capitalize;
-        }
-        body {
-            background-color: #404258;
-            color: white;
-        }
-        input[type="text"], input[type="button"], select {
-            background-color: #474E68;
-            color: white;
-            font-weight: bold;
-            padding: 0.2rem;
-            border: 1px solid white;
-            border-radius: 0.2rem;
-            margin: 0.2rem;
-        }
-        input[type="button"], select {
-            padding: 0.25rem;
-        }
-        input[type="text"]:focus-visible, input[type="button"]:focus-visible, select:focus-visible {
-            outline: 3px solid white;
-            border: 0px;
-        }
-        .teams li em {
-            opacity: 0.5;
-        }
-        .teams > h3 {
-            cursor: pointer;
-            display: inline-block;
-            user-select: none;
-            margin-bottom: 0.25rem;
-        }
-        .teams ul, .explanation {
-            margin: 0.2rem;
-            padding: 0.5rem;
-            background-color: #474E68;
-            border-radius: 0.5rem;
-            border: 1px solid #aaaaaa;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-            list-style: none;
-            color: white;
-        }
-        .explanation ol {
-            margin: 0;
-        }
-        .title {
-            margin: 0;
-            text-align: center;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid white;
-        }
-        .teams ul:first-of-type {
-            margin-top: 0;
-        }
-        .teams.closed ul {
-            display: none;
-            padding: 0;
-            background-color: transparent;
-            border-radius: 0;
-            border: none;
-        }
-        .teams:before {
-            content: '⏷';
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .teams.closed:before {
-            content: '⏵';
-            display: inline-block;
-        }
-        .remove-btn {
-            color: red;
-            font-weight: 600;
-            padding-inline-start: 0.25rem;
-            cursor: pointer;
-            display: inline-block;
-            user-select: none;
-        }
-        .require-btn {
-            color: green;
-            opacity: 0.5;
-            font-weight: 600;
-            padding-inline-start: 0.25rem;
-            cursor: pointer;
-            display: inline-block;
-            user-select: none;
-        }
-        .require-btn.checked {
-            opacity: 1;
-            color: lime;
-        }
-        .hidden {
-            display: none;
-        }
-        .calculating {
-            animation: blink 0.75s infinite linear alternate-reverse;
-        }
-        @keyframes blink {
-            from { opacity: 0 }
-            to { opacity: 1 }
-        }
-        a[href] {
-            color: white;
-            font-weight: 600;
-        }
-        a[href]:visited, a[href]:active {
-            color: #cccccc;
-        }
-        .redglow {
-            text-shadow: 0 0 6px red;
-        }
-        .blueglow {
-            text-shadow: 0 0 6px blue;
-        }
-        .whiteglow {
-            text-shadow: 0 0 6px white;
-        }
-        #teamList {
-            display: grid;
-            gap: 2em;
-            grid-template-columns: repeat(8, 1fr);
-        }
-        .non-interactive {
-            cursor: default;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
     <section class="explanation">
@@ -151,7 +28,7 @@
     <input type="text" id="pokemon2" placeholder="Pokémon 2"><select id="type2"></select>
     <input type="text" id="location" placeholder="Location"><input type="button" value="Add Pair" id="addBtn">
     <br>
-    <input type="button" value="Save To JSON" id="save"><input type="button" value="Load From JSON" id="load">
+    <input type="button" value="Copy Save Data" id="save"><input type="button" value="Paste Saved Data" id="load">
     <br>
     <em>(Your list should auto-save for the next time you open the app after every full calculation, but it's a good idea to back it up with the Save to JSON button in case you clear your browser's data, or want to share your list.)</em>
     <h4 class="caught-header hidden">All Caught Pokémon</h4>
